@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PopQuiz</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script defer src="scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="message-container hidden">
+      <div class="message-box py-4 px-3">
+        <div class="message-text my-4">You got a message!</div>
+        <input
+          type="text"
+          class="playerName"
+          placeholder="Enter your name here"
+        />
+        <button class="message-btn btn btn-lg btn-primary float-right">
+          Click me!
+        </button>
+      </div>
+    </div>
+    <div class="title">Pop Quiz<span>?</span></div>
+
+    <section class="main-menu container">
+      <h3 class="text-center py-4 col-12">Choose a category:</h3>
+      <div class="categories row"></div>
+
+      <div class="scoreBoard mb-4">
+        <div class="col-12 scoreBoard-title">🏆 Score Board 🏆</div>
+        <div class="scoreBoard-header mt-top row">
+          <div class="col-4 score-name scoreBoard-header">Name</div>
+          <div class="col-4 score-category scoreBoard-header">Category</div>
+          <div class="col-4 score-score scoreBoard-header">Score</div>
+        </div>
+        <div class="playerScores"></div>
+      </div>
+    </section>
+
+    <section class="gameBoard container hidden">
+      <div class="gameStatus row">
+        <div class="score col-6">Score: <span>99</span></div>
+        <div class="timer col-6"><span class="seconds">99</span> seconds</div>
+      </div>
+      <div class="question">
+        <p>Ask question here?</p>
+        <img src="assets/starTrek.jpeg" />
+      </div>
+      <div class="answers container">
+        <div class="row">
+          <button class="answer py-3 my-2 btn btn-block btn-primary">
+            Benjamin Cisco
+          </button>
+          <button class="answer py-3 my-3 btn btn-block btn-primary">
+            James T. Kirk
+          </button>
+          <button class="answer py-3 my-3 btn btn-block btn-primary">
+            Jean Luc Picard
+          </button>
+          <button class="answer py-3 my-3 btn btn-block btn-primary">
+            7 of 9
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

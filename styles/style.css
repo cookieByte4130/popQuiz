@@ -1,0 +1,157 @@
+.hidden {
+  display: none;
+}
+
+.title span {
+  float: right;
+  margin-right: 2rem;
+  border: 5px solid white;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  vertical-align: center;
+}
+.title span:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 8px #7a8088;
+}
+
+.message-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000c9;
+}
+
+.message-box {
+  position: absolute;
+  width: 30rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.message-text {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.playerName {
+  display: block;
+  width: 20rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.message-btn {
+  float: right;
+}
+
+.title {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-stretch: expanded;
+  background-color: #0d6efd;
+  color: white;
+}
+
+section {
+  min-height: 85vh;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories div {
+  height: 20rem;
+  width: 20rem;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 1rem auto;
+  box-shadow: 3px 3px 8px #7a8088;
+}
+
+.categories div:hover {
+  cursor: pointer;
+  border: 5px solid #0d6efd;
+}
+
+.scoreBoard {
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.scoreBoard-title {
+  font-size: 1.5rem;
+}
+
+.scoreBoard-title,
+.scoreBoard-header {
+  padding: 0.1rem 0.75rem;
+  font-weight: bold;
+}
+
+.scoreBoard-entry {
+  padding: 0.5rem 0.75rem;
+}
+
+.scoreBoard-title,
+.scoreBoard-header {
+  background-color: #f3db05;
+}
+
+.scoreBoard-entry {
+  background-color: lightgrey;
+}
+
+.scoreBoard-title,
+.score-category {
+  text-align: center;
+}
+
+.score-score {
+  text-align: right;
+}
+
+.gameBoard {
+  text-align: center;
+}
+
+.gameStatus {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+}
+
+.score {
+  text-align: left;
+}
+
+.timer {
+  text-align: right;
+}
+
+.question {
+  padding: 2rem 0 1rem;
+  font-size: 2.5rem;
+}
+
+.question img {
+  height: 18rem;
+  border-radius: 8px;
+}
+
+.answer {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
