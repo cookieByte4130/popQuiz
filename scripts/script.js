@@ -182,11 +182,12 @@ function generateAnswers() {
     //   `assets/${subject}/${answer}.jpeg`,
     //   window.location.href.slice(0, window.location.href.lastIndexOf("/"))
     // );
-    console.log(window.location.hostname);
-    questionImgEl.src = new URL(
+    let loc = new URL(
       `assets/${subject}/${answer}.jpeg`,
-      window.location.hostname
+      window.location.origin
     );
+    console.log(loc);
+    questionImgEl.src = loc;
     while (possibleAnswers.length < 4) {
       let ans = getRandomArrEl(gameQuestions[subject].answers);
       if (!possibleAnswers.includes(ans)) {
