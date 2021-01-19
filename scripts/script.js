@@ -94,11 +94,11 @@ const gameQuestions = {
   },
 };
 
-const scoreBoard = [
-  ["Samus", "space", 3],
-  ["CptGeorgiou", "starTrek", 2],
-  ["Snoopy", "dogs", 1],
-];
+let scoreBoard;
+if (!localStorage.getItem("popQuiz")) {
+  localStorage.setItem("popQuiz", JSON.stringify([["Hal9000", "space", 2]]));
+}
+scoreBoard = JSON.parse(localStorage.getItem("popQuiz"));
 
 function displayScoreBoard(scoreArr) {
   playerScoresEl.innerHTML = "";
@@ -122,6 +122,9 @@ displayScoreBoard(scoreBoard);
 function postScore(name, cat, score) {
   if (name === "") name = "Anonymous";
   scoreBoard.push([name, cat, score]);
+
+  localStorage.setItem("popQuiz", JSON.stringify(scoreBoard));
+
   displayScoreBoard(scoreBoard);
 }
 
@@ -175,23 +178,7 @@ function generateAnswers() {
   } else {
     let possibleAnswers = [];
     possibleAnswers.push(answer);
-    // console.log(
-    //   window.location.href.slice(0, window.location.href.lastIndexOf("/"))
-    // );
-    // questionImgEl.src = new URL(
-    //   `assets/${subject}/${answer}.jpeg`,
-    //   window.location.href.slice(0, window.location.href.lastIndexOf("/"))
-    // );
-    // let loc = new URL(
-    //   `assets/${subject}/${answer}.jpeg`,
-    //   window.location.origin
-    // ).href;
-    // console.log(loc);
-    // questionImgEl.src = loc;
-
-    let loc = `./assets/${subject}/${answer}.jpeg`;
-    console.log(loc);
-    questionImgEl.src = loc;
+    questionImgEl.src = `./assets/${subject}/${answer}.jpeg`;
     while (possibleAnswers.length < 4) {
       let ans = getRandomArrEl(gameQuestions[subject].answers);
       if (!possibleAnswers.includes(ans)) {
@@ -244,7 +231,8 @@ function newQuiz(subj) {
 
 function displayMessage(msg) {
   msgTextEl.textContent = msg;
-  msgContainerEl.classList.toggle("hidden");
+  if (msgContainerEl.classList.contains("hidden"))
+    msgContainerEl.classList.toggle("hidden");
 }
 
 msgBtnEl.addEventListener("click", (e) => {
@@ -292,4 +280,5 @@ answersEl.addEventListener("click", (e) => {
 });
 
 //Things to do:
-//fix bug: if the wrong answer msg is displayed and the time runs out, it doesn't allow game to end
+//Local storage scoreboard
+//readme file
