@@ -182,10 +182,14 @@ function generateAnswers() {
     //   `assets/${subject}/${answer}.jpeg`,
     //   window.location.href.slice(0, window.location.href.lastIndexOf("/"))
     // );
-    let loc = new URL(
-      `assets/${subject}/${answer}.jpeg`,
-      window.location.origin
-    ).href;
+    // let loc = new URL(
+    //   `assets/${subject}/${answer}.jpeg`,
+    //   window.location.origin
+    // ).href;
+    // console.log(loc);
+    // questionImgEl.src = loc;
+
+    let loc = `./assets/${subject}/${answer}.jpeg`;
     console.log(loc);
     questionImgEl.src = loc;
     while (possibleAnswers.length < 4) {
