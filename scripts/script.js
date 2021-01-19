@@ -185,7 +185,7 @@ function generateAnswers() {
     let loc = new URL(
       `assets/${subject}/${answer}.jpeg`,
       window.location.origin
-    );
+    ).href;
     console.log(loc);
     questionImgEl.src = loc;
     while (possibleAnswers.length < 4) {
