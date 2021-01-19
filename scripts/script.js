@@ -167,7 +167,6 @@ function getRandomArrEl(arr) {
 function parseImgSrc(src) {
   return src.slice(src.lastIndexOf("/") + 1, src.indexOf(".jpeg"));
 }
-
 function generateAnswers() {
   let answer = getRandomArrEl(gameQuestions[subject].answers);
 
@@ -176,7 +175,18 @@ function generateAnswers() {
   } else {
     let possibleAnswers = [];
     possibleAnswers.push(answer);
-    questionImgEl.src = `../assets/${subject}/${answer}.jpeg`;
+    // console.log(
+    //   window.location.href.slice(0, window.location.href.lastIndexOf("/"))
+    // );
+    // questionImgEl.src = new URL(
+    //   `assets/${subject}/${answer}.jpeg`,
+    //   window.location.href.slice(0, window.location.href.lastIndexOf("/"))
+    // );
+    console.log(window.location.hostname);
+    questionImgEl.src = new URL(
+      `assets/${subject}/${answer}.jpeg`,
+      window.location.hostname
+    );
     while (possibleAnswers.length < 4) {
       let ans = getRandomArrEl(gameQuestions[subject].answers);
       if (!possibleAnswers.includes(ans)) {
